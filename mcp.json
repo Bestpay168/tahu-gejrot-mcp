@@ -1,0 +1,314 @@
+
+{
+  "mcp_version": "1.0",
+  "project": {
+    "id": "ai_video_prompt_100",
+    "name": "100 AI Video Prompts",
+    "version": "1.0.0",
+    "type": "ai_video_prompt_generator",
+    "language": "id-ID"
+  },
+
+  "product": {
+    "name": "100 AI Video Prompts",
+    "description": "Koleksi 100 prompt video AI siap pakai untuk konten, promosi produk, storytelling dan social media.",
+    "target_platforms": [
+      "TikTok",
+      "YouTube Shorts",
+      "Instagram Reels"
+    ],
+    "default_aspect_ratio": "9:16",
+    "default_duration_seconds": 5
+  },
+
+  "prompt_library": {
+    "total_prompts": 100,
+
+    "categories": {
+      "product_advertising": {
+        "range": "001-020",
+        "name": "Product Advertising",
+        "count": 20
+      },
+
+      "food_advertising": {
+        "range": "021-035",
+        "name": "Food Advertising",
+        "count": 15
+      },
+
+      "ai_character": {
+        "range": "036-050",
+        "name": "AI Character",
+        "count": 15
+      },
+
+      "cinematic": {
+        "range": "051-065",
+        "name": "Cinematic",
+        "count": 15
+      },
+
+      "social_media": {
+        "range": "066-080",
+        "name": "Social Media Viral",
+        "count": 15
+      },
+
+      "storytelling": {
+        "range": "081-090",
+        "name": "Storytelling",
+        "count": 10
+      },
+
+      "business": {
+        "range": "091-100",
+        "name": "Business & Sales",
+        "count": 10
+      }
+    }
+  },
+
+  "prompt_structure": {
+    "required_fields": [
+      "prompt_id",
+      "title",
+      "category",
+      "concept",
+      "scene",
+      "character",
+      "action",
+      "camera",
+      "lighting",
+      "environment",
+      "animation",
+      "style",
+      "duration",
+      "aspect_ratio",
+      "negative_prompt",
+      "caption",
+      "hashtags"
+    ],
+
+    "quality_rules": {
+      "prompt_must_be_actionable": true,
+      "prompt_must_be_copy_paste_ready": true,
+      "include_camera_direction": true,
+      "include_lighting": true,
+      "include_motion": true,
+      "include_negative_prompt": true,
+      "include_social_caption": true,
+      "avoid_vague_description": true
+    }
+  },
+
+  "character_system": {
+    "enabled": true,
+
+    "default_character": {
+      "id": "mascot_001",
+      "file": "./character.json",
+      "reference_image": "./assets/characters/mascot_001/mascot.png"
+    },
+
+    "consistency": {
+      "enabled": true,
+      "priority": "maximum",
+
+      "preserve": [
+        "face identity",
+        "eye shape",
+        "eye color",
+        "skin tone",
+        "hair color",
+        "hair style",
+        "body proportions",
+        "shirt",
+        "shirt color",
+        "shirt logo",
+        "pants",
+        "shoes",
+        "3D visual style"
+      ]
+    }
+  },
+
+  "video_settings": {
+    "default": {
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "fps": 30,
+      "duration_seconds": 5,
+      "format": "mp4"
+    },
+
+    "styles": [
+      "premium 3D commercial",
+      "cinematic",
+      "luxury advertising",
+      "social media commercial",
+      "food commercial",
+      "storytelling",
+      "viral short video"
+    ]
+  },
+
+  "scene_generator": {
+    "enabled": true,
+
+    "timeline": {
+      "opening": "0-2s",
+      "main_action": "2-4s",
+      "ending": "4-5s"
+    },
+
+    "scene_rules": [
+      "Create a strong visual hook in the opening.",
+      "Show the main action clearly.",
+      "Use smooth natural movement.",
+      "End with a memorable visual or product moment."
+    ]
+  },
+
+  "caption_generator": {
+    "enabled": true,
+
+    "formats": [
+      "short",
+      "engaging",
+      "sales",
+      "storytelling",
+      "viral"
+    ],
+
+    "default": {
+      "include_cta": true,
+      "include_emojis": true,
+      "include_hashtags": true
+    }
+  },
+
+  "negative_prompt": {
+    "default": [
+      "low quality",
+      "blurry",
+      "flickering",
+      "bad anatomy",
+      "deformed hands",
+      "extra fingers",
+      "extra limbs",
+      "distorted face",
+      "face morphing",
+      "character inconsistency",
+      "identity drift",
+      "unnatural movement",
+      "broken joints",
+      "distorted body",
+      "duplicate character",
+      "wrong proportions"
+    ]
+  },
+
+  "mcp_tools": {
+    "generate_prompt": {
+      "enabled": true,
+      "description": "Generate one complete AI video prompt."
+    },
+
+    "generate_scene": {
+      "enabled": true,
+      "description": "Generate a detailed video scene."
+    },
+
+    "generate_caption": {
+      "enabled": true,
+      "description": "Generate social media caption and hashtags."
+    },
+
+    "generate_prompt_package": {
+      "enabled": true,
+      "description": "Generate prompt, scene, negative prompt and caption."
+    },
+
+    "generate_100_prompts": {
+      "enabled": true,
+      "description": "Generate the complete 100 AI Video Prompt collection."
+    },
+
+    "get_prompt_by_id": {
+      "enabled": true,
+      "description": "Retrieve a specific prompt from 001 to 100."
+    },
+
+    "get_prompts_by_category": {
+      "enabled": true,
+      "description": "Retrieve prompts based on category."
+    }
+  },
+
+  "output": {
+    "directory": "./output",
+
+    "folders": {
+      "prompts": "./output/prompts",
+      "scenes": "./output/scenes",
+      "captions": "./output/captions",
+      "packages": "./output/packages"
+    },
+
+    "formats": [
+      "json",
+      "txt",
+      "md"
+    ],
+
+    "filename_format": "prompt_{prompt_id}_{slug}"
+  },
+
+  "commercial_system": {
+    "enabled": true,
+
+    "product": {
+      "name": "100 AI Video Prompts",
+      "version": "1.0"
+    },
+
+    "usage": [
+      "digital product",
+      "YouTube content",
+      "TikTok content",
+      "Instagram content",
+      "commercial advertising",
+      "client projects"
+    ]
+  },
+
+  "workflow": [
+    "receive_video_idea",
+    "select_category",
+    "select_prompt",
+    "load_character",
+    "build_scene",
+    "build_video_prompt",
+    "add_negative_prompt",
+    "generate_caption",
+    "generate_hashtags",
+    "quality_check",
+    "save_output"
+  ],
+
+  "quality_control": {
+    "enabled": true,
+
+    "checks": [
+      "clear_concept",
+      "strong_hook",
+      "clear_action",
+      "camera_direction",
+      "lighting_direction",
+      "natural_motion",
+      "social_media_ready",
+      "copy_paste_ready"
+    ]
+  }
+}
